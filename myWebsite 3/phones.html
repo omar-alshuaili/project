@@ -1,0 +1,199 @@
+<?php
+	if (isset($_POST['nav'])) {
+		 header("Location: $_POST[nav]");
+	}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Custom Select Box</title>
+    <link rel="stylesheet" href="Phones.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".default_option").click(function() {
+                $(this).parent().toggleClass("active");
+            })
+
+            $(".select_ul li").click(function() {
+                var currentele = $(this).html();
+                $(".default_option li").html(currentele);
+                $(this).parents(".select_wrap").removeClass("active");
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <ul class="nav-list nav-list-mobile">
+                    <li class="nav-item">
+                        <div class="mobile-menu">
+                            <span class="line line-top"></span>
+
+                            <span class="line line-bottom"></span>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link nav-link-logo"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link nav-link-bag"></a>
+                    </li>
+                </ul>
+                <!-- responsive nav bar-->
+                <ul class="nav-list nav-list-largeScreen">
+
+                    <li class="nav-item nav-item-hidden">
+                        <a href="index.html" class="nav-link nav-link-logo"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">Phones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">Laptops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">Tablets</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a href="contact-us.html" class="nav-link ">Contact us</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a href="#" class="nav-link nav-link-search"></a>
+                    </li>
+                    <li class="nav-item  nav-item-hidden">
+
+                        <a href="#" class="nav-link nav-link-bag"></a>
+
+                        <!-- larger nav bar-->
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+    </header>
+
+    <div class="wrapper" onclick="myFunction()">
+        <div class=" title">
+            your phone company
+        </div>
+
+        <div class="select_wrap">
+            <ul class="default_option">
+                <li>
+                    <div class="option apple">
+                        <div class="icon">
+                            <p>Apple</p>
+                        </div>
+
+
+                    </div>
+                </li>
+            </ul>
+            <ul class="select_ul">
+                <li>
+                    <div class="option apple">
+                        <div class="icon">Aaple</div>
+                        <p></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="option sony">
+                        <div class="icon"></div>
+                        <p>Sony</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="option LG">
+                        <div class="icon"></div>
+                        <p>LG</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="option samsung">
+                        <div class="icon"></div>
+                        <p>samsung</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="vl"></div>
+
+    <!-- dropdown for year -->
+
+    <div class="year">
+        <div class="title-year">
+            models
+        </div>
+
+        <div class="select_wrap">
+            <ul class="default_option">
+                <li>
+                    <div class="option apple">
+                        <div class="icon">
+                            <p>iphone 7</p>
+                        </div>
+
+
+                    </div>
+                </li>
+            </ul>
+            <ul class="select_ul">
+                <li>
+                    <div class="option apple">
+                        <div class="icon">iphone 8</div>
+                        <p></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="option sony">
+                        <div class="icon"></div>
+                        <p>iphone 9</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="option LG">
+                        <div class="icon"></div>
+                        <p>LG</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="option samsung">
+                        <div class="icon"></div>
+                        <p>iphone 10</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("year");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+</script>
+
+</html>
